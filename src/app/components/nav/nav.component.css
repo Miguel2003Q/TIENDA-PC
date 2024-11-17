@@ -1,0 +1,229 @@
+/* Variables para personalización */
+:root {
+  --navbar-bg: #ffffff;
+  --navbar-text: #374151;
+  --primary: #3b82f6;
+  --primary-hover: #2563eb;
+  --navbar-height: 4rem;
+  --transition: 0.2s ease-in-out;
+}
+
+/* Navbar container */
+.navbar {
+  height: var(--navbar-height);
+  background-color: var(--navbar-bg);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 0 1.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Logo styles */
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo:hover {
+  color: var(--primary-hover);
+}
+
+/* Navigation links */
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-links li a {
+  color: var(--navbar-text);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.375rem;
+  transition: var(--transition);
+  position: relative;
+}
+
+/* Efecto de subrayado en hover */
+.nav-links li a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  background-color: var(--primary);
+  transition: var(--transition);
+  transform: translateX(-50%);
+}
+
+.nav-links li a:hover::after {
+  width: calc(100% - 1.5rem);
+}
+
+.nav-links li a:hover {
+  color: var(--primary);
+}
+
+/* Active link style */
+.nav-links li a.active {
+  color: var(--primary);
+  background-color: rgba(59, 130, 246, 0.08);
+}
+
+/* Search container */
+.search-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.search-input {
+  padding: 0.5rem 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  width: 240px;
+  transition: var(--transition);
+  background-color: #f9fafb;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--primary);
+  background-color: white;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.search-button {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.search-button:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-1px);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .navbar {
+    height: auto;
+    padding: 1rem;
+  }
+
+  .nav-links {
+    display: none;
+    position: fixed;
+    top: var(--navbar-height);
+    left: 0;
+    right: 0;
+    background-color: var(--navbar-bg);
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .search-container {
+    display: none;
+  }
+
+  /* Hamburger menu */
+  .menu-button {
+    display: block;
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+  }
+
+  .menu-button span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: var(--navbar-text);
+    transition: var(--transition);
+    position: relative;
+  }
+
+  .menu-button span::before,
+  .menu-button span::after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 2px;
+    background-color: var(--navbar-text);
+    transition: var(--transition);
+  }
+
+  .menu-button span::before {
+    transform: translateY(-6px);
+  }
+
+  .menu-button span::after {
+    transform: translateY(6px);
+  }
+}
+
+/* Glassmorphism effect on scroll */
+@supports (backdrop-filter: blur(8px)) {
+  .navbar.scrolled {
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(8px);
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --navbar-bg: #1f2937;
+    --navbar-text: #e5e7eb;
+  }
+
+  .search-input {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+    color: white;
+  }
+
+  .search-input:focus {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .navbar.scrolled {
+    background-color: rgba(31, 41, 55, 0.8);
+  }
+}
