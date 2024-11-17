@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computadores Gaming</title>
+    <link rel="stylesheet" href="productos.component.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Computadores Gaming Premium</h1>
+        <div *ngFor="let producto of productos" class="products-grid">
+            <div class="product-card">
+                <img src="/api/placeholder/300/200" alt="PC Gamer Alpha">
+                <h2>PC Gamer Alpha</h2>
+                <ul class="specs">
+                    <li>{{producto.id}}</li>
+                    <li>{{producto.procesador}}</li>
+                    <li>{{producto.grafica}}</li>
+                    <li>{{producto.ram}}</li>
+                    <li>{{producto.Almacenamiento}}</li>
+                </ul>
+                <p class="price">${{producto.price}}</p>
+                <button  [routerLink]="[ '/detalle', producto.id ]" class="buy-btn">Comprar Ahora</button>
+            </div>
+
+            <div  class="product-card">
+                <img src="/api/placeholder/300/200" alt="PC Gamer Beta">
+                <h2>PC Gamer Beta</h2>
+                <ul class="specs">
+                    <li>{{producto.id}}</li>
+                    <li>{{producto.procesador}}</li>
+                    <li>{{producto.grafica}}</li>
+                    <li>{{producto.ram}}</li>
+                    <li>{{producto.Almacenamiento}}</li>
+                </ul>
+                <p class="price">${{producto.price}}</p>
+                <button  [routerLink]="[ '/detalle', producto.id ]" class="buy-btn">Comprar Ahora</button>
+            </div>
+
+            <div class="product-card">
+                <img src="/api/placeholder/300/200" alt="PC Gamer Gamma">
+                <h2>PC Gamer Gamma</h2>
+                <ul class="specs">
+                    <li>{{producto.id}}</li>
+                    <li>{{producto.procesador}}</li>
+                    <li>{{producto.grafica}}</li>
+                    <li>{{producto.ram}}</li>
+                    <li>{{producto.Almacenamiento}}</li>
+                </ul>
+                <p class="price">${{producto.price}}</p>
+                <button  [routerLink]="[ '/detalle', producto.id ]" class="buy-btn">Comprar Ahora</button>
+            </div>
+
+            <div class="product-card">
+                <img src="/api/placeholder/300/200" alt="PC Gamer Delta">
+                <h2>PC Gamer Delta</h2>
+                <ul class="specs">
+                    <li>{{producto.id}}</li>
+                    <li>{{producto.procesador}}</li>
+                    <li>{{producto.grafica}}</li>
+                    <li>{{producto.ram}}</li>
+                    <li>{{producto.Almacenamiento}}</li>
+                </ul>
+                <p class="price">${{producto.price}}</p>
+                <button  [routerLink]="[ '/detalle', producto.id ]" class="buy-btn">Comprar Ahora</button>
+            </div>
+
+            <div  class="product-card">
+                <img src="/api/placeholder/300/200" alt="PC Gamer Epsilon">
+                <h2>PC Gamer Epsilon</h2>
+                <ul class="specs">
+                    <li>{{producto.id}}</li>
+                    <li>{{producto.procesador}}</li>
+                    <li>{{producto.grafica}}</li>
+                    <li>{{producto.ram}}</li>
+                    <li>{{producto.Almacenamiento}}</li>
+                </ul>
+                <p class="price">${{producto.price}}</p>
+                <button  [routerLink]="[ '/detalle', producto.id ]" class="buy-btn">Comprar Ahora</button>
+            </div>
+
+            <div class="product-card">
+                <img src="/api/placeholder/300/200" alt="PC Gamer Zeta">
+                <h2>PC Gamer Zeta</h2>
+                <ul class="specs">
+                    <li>{{producto.id}}</li>
+                    <li>{{producto.procesador}}</li>
+                    <li>{{producto.grafica}}</li>
+                    <li>{{producto.ram}}</li>
+                    <li>{{producto.Almacenamiento}}</li>
+                </ul>
+                <p class="price">${{producto.price}}</p>
+                <button  [routerLink]="[ '/detalle', producto.id ]" class="buy-btn">Comprar Ahora</button>
+            </div>
+
+            <div class="product-card">
+                <img src="/api/placeholder/300/200" alt="PC Gamer Eta">
+                <h2>PC Gamer Eta</h2>
+                <ul class="specs">
+                    <li>{{producto.id}}</li>
+                    <li>{{producto.procesador}}</li>
+                    <li>{{producto.grafica}}</li>
+                    <li>{{producto.ram}}</li>
+                    <li>{{producto.Almacenamiento}}</li>
+                </ul>
+                <p class="price">${{producto.price}}</p>
+                <button  [routerLink]="[ '/detalle', producto.id ]" class="buy-btn">Comprar Ahora</button>
+            </div>
+
+            <div class="product-card">
+                <img src="/api/placeholder/300/200" alt="PC Gamer Theta">
+                <h2>PC Gamer Theta</h2>
+                <ul class="specs">
+                    <li>{{producto.id}}</li>
+                    <li>{{producto.procesador}}</li>
+                    <li>{{producto.grafica}}</li>
+                    <li>{{producto.ram}}</li>
+                    <li>{{producto.Almacenamiento}}</li>
+                </ul>
+                <p class="price">${{producto.price}}</p>
+                <button  [routerLink]="[ '/detalle', producto.id ]" class="buy-btn">Comprar Ahora</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
