@@ -8,7 +8,7 @@ import { VistaregistroComponent } from './vista/vistaregistro/vistaregistro.comp
 import { Component } from '@angular/core';
 import { DetallesComponent } from './vista/detalles/detalles.component';
 export const routes: Routes = [
-    {path:"inicio",component:VistahomeComponent},
+    {path:"",component:VistahomeComponent},
     {path: "login",component:VistaloginComponent},
     {path: "perfil",component:VistaperfilComponent},
     {path: "productos", component:VistaproductosComponent},
